@@ -1,10 +1,11 @@
 from application import Application, Task
-from background import buttazzo_t,rajkumar_t,build_table
-from loreti_faldella import p1_t,p2_t
+#from background import buttazzo_t,rajkumar_t,build_table
+#from loreti_faldella import p1_t,p2_t
 import copy
 
 
-def schedule(app: Application, n: int, Qn : list, epsilon=0.01):
+#def schedule(app: Application, n: int, Qn : list, epsilon=0.01):
+def schedule(app, n, Qn , epsilon=0.01):
     T = copy.deepcopy(app.tasks)
     S = {} #starting times of each task
     #S_Qn = {} ##starting times of each critical section in Qn
@@ -54,7 +55,7 @@ def hr_blocking_set(Bn,Bn_cs):
         s += "T"+str(cs.t_id)+":"+str(cs)+","
     return s[:-1]+"]"
 
-
+'''
 def test_with_predef_app():
     app = Application.load("A0.T0:R4-34,R0-56,R5-77,R9-32,R6-61,R9-81,R7-32;T1:R2-97,R2-63,R6-51,R7-43,R5-42,R1-40,R5-55,R4-96,R5-60,R9-100;T2:R7-38,R3-87,R9-32,R7-53,R2-80;T3:R6-64,R9-97,R2-76,R2-78,R7-81,R3-37,R6-77,R5-72,R0-82;T4:R2-98,R2-36,R4-96,R8-49,R6-70,R8-39,R1-61,R0-67")
     print(app.hr_repr())
@@ -79,4 +80,4 @@ def test_with_predef_app():
     Bn,Bn_cs=p2_t(app,0)
     print(hr_blocking_set(Bn,Bn_cs))
     print(schedule(app,0,Bn_cs))
-
+'''

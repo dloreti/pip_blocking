@@ -1,13 +1,18 @@
+
 from application import Application
 from application import Task
 from application import Cs
 import logging
 
+
+
 logger = logging.getLogger(__name__)
 #u=0
 
 
-def build_table(app : Application):
+
+#def build_table(app : Application):
+def build_table(app):
     w, h = len(app.ceilings), len(app.tasks)
     table = [[None for x in range(w)] for y in range(h)] 
     for t in app.tasks:
@@ -16,7 +21,8 @@ def build_table(app : Application):
     return table
         
 
-def buttazzo(app : Application):
+#def buttazzo(app : Application):
+def buttazzo(app):
     #print(app.hr_repr())
     table=build_table(app)
     ret = {}
@@ -28,7 +34,8 @@ def buttazzo(app : Application):
         #print("Task "+str(n)+": Bn = "+str(Bn)+" Bn_cs = "+str(Bn_cs))
     return ret
 
-def buttazzo_t(app : Application, table: list, t : int):
+#def buttazzo_t(app : Application, table: list, t : int):
+def buttazzo_t(app, table, t ):
     # create the table
     valid_res = [r for r in range(len(app.ceilings)) if app.ceilings[r]is not None and app.ceilings[r] <= t ]
     
@@ -133,7 +140,8 @@ def compute_B(path):
                 res[cs.resource]=cs
     return B, list(res.values())
 
-def rajkumar_t(app : Application , table: list, t : int):
+#def rajkumar_t(app : Application , table: list, t : int):
+def rajkumar_t(app , table, t ):
     valid_res = [r for r in range(len(app.ceilings)) if app.ceilings[r]is not None and app.ceilings[r] <= t ]
     maxB, maxpath = build_path([],t+1,len(app.tasks),valid_res,table, 0,[])
     #global u
@@ -143,7 +151,8 @@ def rajkumar_t(app : Application , table: list, t : int):
     return maxB, maxQn
 
 
-def rajkumar(app : Application):
+#def rajkumar(app : Application):
+def rajkumar(app ):
     table=build_table(app)
     ret = {}
     #for row in table:

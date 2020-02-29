@@ -1,6 +1,6 @@
 from application import Application,Task,Cs
 import random
-
+import io
 
 
 def generate(Nmin=5,Nmax=100,Nstep=5,**kwargs ):
@@ -48,7 +48,7 @@ def save(apps,filename):
 
 def load(filename):
     apps = []
-    with open(filename,'r',newline='') as appf:
+    with io.open(filename,'r',newline='') as appf:
         for line in appf.readlines():
             apps.append(Application.load(line[:-1]))  # discard the final \n 
     return apps

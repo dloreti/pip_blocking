@@ -60,6 +60,7 @@ for apps in apps_list:
         
         N.append(len(a.tasks))
         print("appset = "+str(iL)+" N = "+str(len(a.tasks)))
+        
         print('********** Buttazzo ****************')
         start=time.time()
         r=buttazzo(a)
@@ -69,7 +70,6 @@ for apps in apps_list:
         V=avg_feas_sched(a,r)
         b_avg_f.append(V)
         print("Time="+str(end-start)+" Bn="+str(r[0][0])+" Avg_feas="+str(V))
-
 
         print('********** P1 ****************')
         start=time.time()

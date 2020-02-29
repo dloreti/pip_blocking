@@ -82,6 +82,12 @@ class Task:
         #print("t="+str(self.t_id)+" longest="+str(longest))
         return longest
 
+    def response_time(self):
+        sum=0
+        for c in self.cs:
+            sum+=c.duration
+        return sum
+
     def startingtime(self,crit):
         cs_sofar = []
         if crit.t_id != self.t_id:

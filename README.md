@@ -19,8 +19,14 @@ Publishers, Norwell, MA, USA.
 
 The file `loreti_faldella.py` implements two Binary Linear Programming based approaches reported in:
 
-Eugenio Fadella and Daniela Loreti, Precise Blocking Time of Tasks Exploiting the Priority Inheritance Protocol for Sharing Resources. Submitted to ACM Trans. Embedd. Comput. Syst. in 2019.
+Eugenio Fadella and Daniela Loreti, Precise Worst-case Blocking Time of Tasks under Priority Inheritance Protocol. Submitted to IEEE Trans. on Computers in 2020.
 
 The function `def schedule(app: Application, n: int, Qn : list)` of file `scheduler.py` evaluates the feasibility of the solution (in terms of the possibility that a block chaining as the one on the solution can actually occur) provided by any method.
 
-You can use `compute_n_store.py` to launch the comparison. The results will be saved in the `apps` directory. Then, you can use `load_n_plot.py` to visualize the reults.
+You can use `compute_n_store.py` to launch the comparison. The file `computeY_n_store.py` can be used to call `schedcat` and compute the results of Yang et al.'s method reported in:
+
+M. Yang, A. Wieder, and B. B. Brandenburg, Global real-time semaphore protocols: A survey, unified analysis, and compari- son, in IEEE Real-Time Systems Symposium, RTSS, 2015, pp. 1–12.
+
+In order to execute `computeY_n_store.py` you have to first download the github repository of `schedcat` (https://github.com/brandenburg/schedcat) and store it into the lib folder of this project. Since `schedcat` only works with python 2.7, be sure to launch `computeY_n_store.py` with it. All other python script in this project run with python 3.
+
+The results will be saved in the `apps` directory. Then, you can use `load_n_plot.py` to visualize the results.
